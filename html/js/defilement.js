@@ -51,6 +51,7 @@ const thumbs = document.querySelectorAll(".thumbs img");
 
 let current = 0;
 
+
 // Sélection d’une image via clic
 for (let i = 0; i < thumbs.length; i++) {
 
@@ -65,4 +66,23 @@ for (let i = 0; i < thumbs.length; i++) {
     current = i;                   // on met à jour l'index
   };
 }
+//test boucle 
+
+setInterval(function () {
+
+  // On avance d'une image
+  current++;
+
+  // Si on dépasse la dernière image, on revient à la première
+  if (current >= images.length) {
+    current = 0;
+  }
+
+  // On met à jour l'image principale
+  mainImg.src = images[current];
+
+  // On met à jour le nom
+  nomImg.textContent = noms[current];
+
+}, 10000); // 10 secondes
 
