@@ -62,7 +62,8 @@ for (let i = 0; i < thumbs.length; i++) {
     let cheminImage = images[i];
     let description_image = noms[i];   // on récupère le chemin de l'image
     mainImg.src = cheminImage;     // on change l'image principale
-    nomImg.style.display = "block";  // on change la description
+    nomImg.style.display = "block"; 
+    localStorage.setItem("burgerSelectionne", noms[i]); // stockage information 
     current = i;                   // on met à jour l'index
   };
 }
