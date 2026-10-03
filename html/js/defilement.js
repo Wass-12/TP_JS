@@ -62,7 +62,7 @@ for (let i = 0; i < thumbs.length; i++) {
     let cheminImage = images[i];
     let description_image = noms[i];   // on récupère le chemin de l'image
     mainImg.src = cheminImage;     // on change l'image principale
-    nomImg.textContent = description_image;  // on change la description
+    nomImg.style.display = "block";  // on change la description
     current = i;                   // on met à jour l'index
   };
 }
@@ -86,3 +86,8 @@ setInterval(function () {
 
 }, 10000); // 10 secondes
 
+// rafraîchissement de la page toutes les 15 secondes
+// je fais parce que j'arrive pas a faire disparaître le nom de l'image quand je clique sur une miniature quand elle change ( a esseyer de faire marcher) 
+setInterval(function () {
+  location.reload();
+}, 15000); // 15000 ms = 15 secondes

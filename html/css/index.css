@@ -82,6 +82,11 @@ button:hover {
 .thumbs img:hover {
   opacity: 1;
 }
+#nom-img {
+  display: none;
+}
+
+
 /* --- NAVIGATION --- */
 
 nav {
