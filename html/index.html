@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page de test</title>
-
-    <link rel="stylesheet" href="css/index.css">
-    <a href="html/creation_burger.html">Aller à la page 2</a>
+  <meta charset="UTF-8">
+  <title>Test slider</title>
+  <style>
+    #slider {
+      width: 400px;
+      margin: 20px auto;
+      text-align: center;
+    }
+    #slider img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .thumbs img {
+      width: 60px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 6px;
+      opacity: 0.6;
+      transition: 0.2s;
+    }
+    .thumbs img:hover {
+      opacity: 1;
+    }
+  </style>
 </head>
-
 <body>
+    <p>test</p>
+  <div id="slider"></div>
 
-    <header>
-        <h1>Ma page de test</h1>
-    </header>
-
-    <main>
-        <div class="card">
-            <h2>Hello 👋</h2>
-            <p>Cette page sert juste à tester du HTML et du CSS.</p>
-
-            <button>Tester le bouton</button>
-        </div>
-    </main>
-
+  <!-- Ton JS (depuis html vers js) -->
+  <script src="js/defilement.js"></script>
 </body>
 </html>
