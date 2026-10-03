@@ -1,5 +1,8 @@
 const burger = localStorage.getItem("burgerSelectionne");
-
+document.getElementById("titre").textContent = burger;
+// trouve le moyen de récupérer les ingrédients du burger sélectionné dans la page précédente
+// a demain 
+console.log(burger);
 // Toutes les listes d’ingrédients pour chaque burger
 const ingredientsData = {
     "Burger Bœuf": [
@@ -81,5 +84,18 @@ const ingredientsData = {
         "Oignon rouge"
     ]
 };
+// On récupère la liste d’ingrédients du burger
+const liste = ingredientsData[burger];
 
-document.getElementById("titre").textContent = burger;
+// document.getElementById("titre").textContent = burger;
+
+// On affiche les ingrédients
+if (liste) {
+    liste.forEach(ing => {
+        document.getElementById("liste").innerHTML += `<li>${ing}</li>`;
+    });
+} else {
+    document.getElementById("liste").innerHTML = `
+        <li style="color:red;">Aucun ingrédient trouvé pour ce burger</li>
+    `;
+}
