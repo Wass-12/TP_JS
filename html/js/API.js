@@ -1,5 +1,7 @@
 // Quand l'utilisateur clique sur "Qui sommes-nous ?"
-document.querySelector("TON_BOUTON").addEventListener("click", () => {
+document.querySelector("#qui_sommes_nous").addEventListener("click", () => {
+    console.log("sa fonctionne");
+
 
     // URL de l'API
     const url = "https://opendata.agencebio.org/api/gouv_api_swagger.json";
