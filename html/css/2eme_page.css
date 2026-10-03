@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #e8f0ff;
+    color: #222;
+}
+
+header {
+    background: #0056b3;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 16px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+a:hover {
+    background: #0056b3;
+}
