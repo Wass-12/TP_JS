@@ -45,3 +45,68 @@ button {
 button:hover {
     background: #0056b3;
 }
+/* styles defilement image pour selection  */
+
+ #slider {
+  width: 400px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+/* Image principale */
+#slider img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Conteneur des miniatures en ligne */
+.thumbs {
+  display: flex;          /* Alignement horizontal */
+  justify-content: center;
+  gap: 10px;              /* Espace entre les images */
+  margin-top: 10px;
+}
+
+/* Miniatures */
+.thumbs img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;      /* Pour éviter les déformations */
+  cursor: pointer;
+  border-radius: 6px;
+  opacity: 0.6;
+  transition: 0.2s;
+}
+
+/* Effet hover */
+.thumbs img:hover {
+  opacity: 1;
+}
+#nom-img {
+  display: none;
+}
+
+
+/* --- NAVIGATION --- */
+
+nav {
+  background: #222;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 18px;
+  background: #333;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: #555;
+}
