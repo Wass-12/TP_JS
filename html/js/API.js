@@ -1,5 +1,6 @@
 // Quand l'utilisateur clique sur "Qui sommes-nous ?"
 document.querySelector("#qui_sommes_nous").addEventListener("click", () => {
+window.location.href = "qui_sommes_nous.html";
 
 // URL de l'API
     const url = "https://opendata.agencebio.org/api/gouv/operateurs/?siret=79317749400028";
@@ -32,8 +33,8 @@ document.querySelector("#qui_sommes_nous").addEventListener("click", () => {
         productions.forEach(productions => {
     console.log(productions.nom);
 });
-//bravo tu as réussi
-        })
+        })//bravo tu as réussi
+        
         .catch(error => {
             console.error(error);
         });
