@@ -99,3 +99,5 @@ if (liste) {
         <li style="color:red;">Aucun ingrédient trouvé pour ce burger</li>
     `;
 }
+console.log(burger);
+console.log("test");

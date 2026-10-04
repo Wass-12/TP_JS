@@ -89,6 +89,6 @@ setInterval(function () {
 
 // rafraîchissement de la page toutes les 15 secondes
 // je fais parce que j'arrive pas a faire disparaître le nom de l'image quand je clique sur une miniature quand elle change ( a esseyer de faire marcher) 
-setInterval(function () {
-  location.reload();
-}, 15000); // 15000 ms = 15 secondes
+// setInterval(function () {
+//   location.reload();
+// }, 15000); // 15000 ms = 15 secondes
