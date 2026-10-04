@@ -101,3 +101,26 @@ if (liste) {
 }
 console.log(burger);
 console.log("test");
+ 
+// parti sur la compo des burgers
+
+const inputIng = document.getElementById("searchIng");
+const resultIng = document.getElementById("resultIng");
+
+inputIng.addEventListener("input", function () {
+    const texte = inputIng.value.toLowerCase();
+
+    // On cherche un ingrédient qui correspond
+    const match = liste.find(ing => ing.toLowerCase().includes(texte));
+
+    if (match) {
+        resultIng.innerHTML = `
+            <p>Ingrédient trouvé : <strong>${match}</strong></p>
+        `;
+    } else {
+        resultIng.innerHTML = `
+            <p style="color:red;">Aucun ingrédient trouvé</p>
+        `;
+        // console.log("Aucun ingrédient trouvé");
+    }
+});
