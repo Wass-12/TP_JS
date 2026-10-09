@@ -1,8 +1,10 @@
 const burger = localStorage.getItem("burgerSelectionne");
 document.getElementById("titre").textContent = burger;
-// trouve le moyen de récupérer les ingrédients du burger sélectionné dans la page précédente
-// a demain 
-console.log(burger);
+const ingredientsValides =
+    JSON.parse(localStorage.getItem("liste_ingrédients")) || [];
+
+let ingredientTrouve = null;
+
 // Toutes les listes d’ingrédients pour chaque burger
 const ingredientsData = {
     "Burger Bœuf": [
@@ -114,13 +116,48 @@ inputIng.addEventListener("input", function () {
     const match = liste.find(ing => ing.toLowerCase().includes(texte));
 
     if (match) {
+        ingredientTrouve = match;
         resultIng.innerHTML = `
             <p>Ingrédient trouvé : <strong>${match}</strong></p>
         `;
     } else {
+        ingredientTrouve = null;
         resultIng.innerHTML = `
             <p style="color:red;">Aucun ingrédient trouvé</p>
         `;
         // console.log("Aucun ingrédient trouvé");
     }
 });
+
+// comment stocker les ingrédients trouvés dans le localStorage solution en cours de recherche
+const listeIngredientsValides = document.getElementById("listeIngredientsValides");
+
+function afficherIngredientsValides() {
+    listeIngredientsValides.innerHTML = "";
+
+    ingredientsValides.forEach(ing => {
+        listeIngredientsValides.innerHTML += `<li>${ing}</li>`;
+    });
+}
+const btnIngredient = document.getElementById("btnIngredient");
+
+btnIngredient.addEventListener("click", function () {
+
+    if (
+        ingredientTrouve &&
+        !ingredientsValides.includes(ingredientTrouve)
+    ) {
+
+        ingredientsValides.push(ingredientTrouve);
+
+  localStorage.setItem(
+    "liste_ingrédients",
+    JSON.stringify(ingredientsValides)
+);
+
+afficherIngredientsValides();
+
+    }
+
+});
+console.log(ingredientsValides);
