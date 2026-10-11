@@ -1,0 +1,448 @@
+/* ==========================================================
+   CLICK BURGER — feuille de style commune (design Figma)
+   1rem = 16px sur la maquette 1728px, la page s'adapte ensuite
+   ========================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka+One&family=Gveret+Levin&family=Hanalei+Fill&family=Inter:wght@400;600&display=swap");
+
+:root {
+    --fond: #260404;
+    --marron: #512710;
+    --orange: #C4862E;
+    --jaune: #E3BE5B;
+    --gris: #D9D9D9;
+    --blanc: #FFFFFF;
+
+    --f-nav: "Hanalei Fill", "Fredoka One", cursive;
+    --f-titre: "Gveret Levin", "Fredoka One", cursive;
+    --f-bouton: "Fredoka One", "Gveret Levin", sans-serif;
+    --f-section: "Bungee", "Fredoka One", sans-serif;
+    --f-texte: "Inter", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: clamp(8px, 0.926vw, 16px); }
+
+body {
+    margin: 0;
+    background: var(--fond);
+    color: var(--blanc);
+    font-family: var(--f-texte);
+    overflow-x: hidden;
+}
+
+img { max-width: 100%; }
+ul { padding: 0; margin: 0; }
+
+.page { max-width: 108rem; margin: 0 auto; }
+
+/* ---------- Titres de page ---------- */
+.titre-page {
+    font-family: var(--f-titre);
+    font-weight: 400;
+    font-size: 3.375rem;       /* 54px */
+    text-align: center;
+    margin: 9rem 0 4rem;
+    line-height: 1.2;
+}
+.titre-geant {
+    font-family: var(--f-nav);
+    font-weight: 400;
+    font-size: 6rem;           /* 96px */
+    text-align: center;
+    margin: 9rem 0 5rem;
+    line-height: 1.2;
+}
+.titre-bloc {
+    font-family: var(--f-titre);
+    font-weight: 400;
+    font-size: 3.375rem;
+    text-align: center;
+    margin: 6rem 0 3rem;
+}
+
+/* ---------- Boutons ---------- */
+.btn,
+button.btn {
+    display: inline-block;
+    border: 0;
+    cursor: pointer;
+    background: var(--orange);
+    color: var(--blanc);
+    font-family: var(--f-bouton);
+    font-size: 2rem;           /* 32px */
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    padding: 1.2rem 3rem;
+    border-radius: 2.5rem;
+    transition: transform .15s, background .15s;
+}
+.btn:hover { background: var(--jaune); transform: translateY(-2px); }
+.btn--marron { background: var(--marron); }
+.btn--marron:hover { background: var(--orange); }
+
+/* ==========================================================
+   EN-TÊTE
+   ========================================================== */
+.site-header {
+    display: grid;
+    grid-template-columns: 1fr 16.7rem 1fr;
+    align-items: center;
+    height: 18.75rem;
+    max-width: 108rem;
+    margin: 0 auto;
+}
+.site-header .logo img { width: 16.7rem; height: 16.7rem; display: block; object-fit: contain; }
+
+.nav-gauche { display: flex; gap: 6.4rem; padding-left: 8.5rem; justify-self: start; }
+.nav-droite { display: flex; gap: 1.4rem; padding-right: 3.75rem; justify-self: end; }
+
+.nav-gauche a,
+.nav-droite a {
+    font-family: var(--f-nav);
+    font-size: 1.875rem;       /* 30px */
+    color: var(--blanc);
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color .15s, background .15s;
+}
+.nav-gauche a:hover,
+.nav-gauche a.actif { color: var(--jaune); }
+
+.nav-droite a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.625rem;          /* 58px */
+    border-radius: 1rem;
+    background: var(--orange);
+    padding: 0 1.5rem;
+    min-width: 17.75rem;
+}
+.nav-droite a + a { background: var(--jaune); min-width: 19.9rem; }
+.nav-droite a:hover { filter: brightness(1.1); color: var(--blanc); }
+.nav-droite a.actif { outline: .25rem solid var(--blanc); }
+
+/* ==========================================================
+   PIED DE PAGE
+   ========================================================== */
+.site-footer {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    align-items: center;
+    gap: 3rem;
+    max-width: 108rem;
+    margin: 8rem auto 0;
+    padding: 4rem 4rem 5rem;
+}
+.site-footer .pied-logo img { width: 20.3rem; display: block; }
+.site-footer .trait { width: .3rem; height: 21.4rem; background: var(--gris); border-radius: .2rem; }
+.site-footer .pied-liens { display: flex; flex-direction: column; align-items: center; gap: 1.4rem; }
+.site-footer .pied-liens a {
+    font-family: var(--f-nav);
+    font-size: 1.875rem;
+    color: var(--blanc);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.site-footer .pied-liens a:hover { color: var(--jaune); }
+.site-footer .reseaux { display: flex; align-items: center; justify-content: center; gap: 2rem; }
+.site-footer .reseaux a {
+    width: 4.4rem; height: 4.4rem;
+    border-radius: 50%;
+    border: .25rem solid var(--orange);
+    color: var(--orange);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--f-bouton);
+    font-size: 1.7rem;
+    text-decoration: none;
+    transition: background .15s, color .15s;
+}
+.site-footer .reseaux a:hover { background: var(--orange); color: var(--fond); }
+
+/* ==========================================================
+   PAGE « CRÉER VOTRE BURGER »  (creation_burger.html)
+   ========================================================== */
+.creation-burger {
+    display: grid;
+    grid-template-columns: 1fr 29.5rem;
+    gap: 4rem;
+    align-items: start;
+    padding: 0 4.25rem;
+}
+.creation-burger .visuel { text-align: center; }
+.creation-burger .visuel img { width: 42.7rem; max-width: 100%; }
+
+.panneau {
+    background: var(--marron);
+    border-radius: 4.4rem;     /* 70px */
+    padding: 4rem 2.2rem 3rem;
+}
+.panneau h2 {
+    font-family: var(--f-nav);
+    font-weight: 400;
+    font-size: 1.875rem;
+    margin: 0 0 2rem;
+    text-align: center;
+}
+#liste_ingredients_final {
+    list-style: none;
+    counter-reset: ing;
+    border-bottom: .0625rem solid var(--orange);
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+}
+#liste_ingredients_final li {
+    counter-increment: ing;
+    display: flex;
+    align-items: baseline;
+    gap: .6rem;
+    font-family: var(--f-titre);
+    font-size: 2rem;
+    padding: 1.2rem 0;
+}
+#liste_ingredients_final li::after {
+    content: counter(ing, decimal-leading-zero);
+    margin-left: auto;
+    font-family: var(--f-nav);
+    font-size: 1.875rem;
+}
+.panneau .actions { text-align: center; }
+#btnConfirmer {
+    border: 0;
+    cursor: pointer;
+    width: 22.3rem;
+    background: var(--orange);
+    color: var(--blanc);
+    font-family: var(--f-bouton);
+    font-size: 2rem;
+    padding: 1.2rem 0;
+    border-radius: 2.5rem;
+    transition: background .15s;
+}
+#btnConfirmer:hover { background: var(--jaune); }
+
+#recap:not(:empty) {
+    max-width: 60rem;
+    margin: 5rem auto 0;
+    background: var(--marron);
+    border-radius: 4.4rem;
+    padding: 3rem 4rem;
+    font-family: var(--f-titre);
+    font-size: 1.6rem;
+    text-align: center;
+}
+#recap h2 { font-family: var(--f-titre); font-weight: 400; font-size: 2.6rem; margin-top: 0; }
+#recap h3 { font-family: var(--f-nav); font-weight: 400; color: var(--jaune); }
+#recap ul { list-style: none; }
+#recap li { padding: .4rem 0; }
+
+/* ==========================================================
+   PAGE « CRÉER VOTRE INGRÉDIENT »  (creation_ingrediant.html)
+   ========================================================== */
+.zone-ingredient {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    padding: 0 8.5rem;
+    align-items: start;
+}
+.formulaire label,
+.etiquette {
+    display: block;
+    font-family: var(--f-nav);
+    font-size: 1.875rem;
+    margin-bottom: 1rem;
+}
+#searchIng {
+    width: 100%;
+    height: 5.125rem;          /* 82px */
+    border: 0;
+    border-radius: 1.125rem;   /* 18px */
+    background: var(--gris);
+    color: var(--fond);
+    font-family: var(--f-texte);
+    font-size: 1.675rem;
+    padding: 0 2rem;
+}
+#searchIng::placeholder { color: #9CA3AF; }
+#searchIng:focus { outline: .25rem solid var(--jaune); }
+
+#btnIngredient {
+    display: block;
+    margin: 3rem auto 0;
+    width: 28rem;
+    height: 5.375rem;          /* 86px */
+    border: 0;
+    border-radius: 9999px;
+    background: var(--orange);
+    color: var(--blanc);
+    font-family: var(--f-bouton);
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 0 .6rem 1.4rem rgba(0, 0, 0, .35);
+    transition: background .15s, transform .15s;
+}
+#btnIngredient:hover { background: var(--jaune); transform: translateY(-2px); }
+
+#resultIng p { font-size: 1.4rem; margin: 1.6rem 0 0; text-align: center; }
+#resultIng p[style*="red"] { color: #ff8a80 !important; }
+#resultIng p[style*="green"] { color: #9be28f !important; }
+
+.carte-burger {
+    background: var(--marron);
+    border-radius: 4.4rem;
+    padding: 3rem 3.4rem;
+}
+.carte-burger h1 {
+    font-family: var(--f-titre);
+    font-weight: 400;
+    font-size: 2.8rem;
+    margin: 0 0 1.4rem;
+    color: var(--jaune);
+    min-height: 3.4rem;
+}
+.carte-burger ul { list-style: none; }
+.carte-burger li {
+    font-family: var(--f-titre);
+    font-size: 1.8rem;
+    padding: .7rem 0;
+    border-bottom: .0625rem solid rgba(196, 134, 46, .5);
+}
+.carte-burger li:last-child { border-bottom: 0; }
+.carte-burger li[style*="red"] { color: #ff8a80 !important; border: 0; }
+
+.valides { padding: 4rem 8.5rem 0; text-align: center; }
+.valides h3 { font-family: var(--f-nav); font-weight: 400; font-size: 1.875rem; margin: 0 0 1.4rem; }
+#listeIngredientsValides {
+    list-style: none;
+    display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;
+    min-height: 2rem;
+}
+#listeIngredientsValides li {
+    background: var(--orange);
+    border-radius: 2rem;
+    padding: .6rem 2rem;
+    font-family: var(--f-bouton);
+    font-size: 1.5rem;
+}
+.valides .btn { margin-top: 3rem; }
+
+/* Galerie d'ingrédients */
+.galerie {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.2rem 2rem;
+    padding: 0 2rem;
+}
+.galerie figure { margin: 0; text-align: center; }
+.galerie img {
+    width: 100%;
+    aspect-ratio: 509 / 361;
+    object-fit: cover;
+    border-radius: 3.6rem;     /* 58px */
+    display: block;
+}
+.galerie figcaption {
+    font-family: var(--f-titre);
+    font-size: 2.25rem;        /* 36px */
+    margin-top: 1rem;
+}
+
+/* ==========================================================
+   PAGE « QUI SOMMES-NOUS »  (qui_sommes_nous.html)
+   ========================================================== */
+.bloc-histoire {
+    display: grid;
+    grid-template-columns: 31rem 1fr;
+    gap: 6rem;
+    align-items: center;
+    max-width: 100rem;
+    margin: 0 auto 7rem;
+    padding: 0 4rem;
+}
+.bloc-histoire.inverse { grid-template-columns: 1fr 31rem; }
+.bloc-histoire.inverse .photos { order: 2; }
+
+.photos { position: relative; height: 37rem; }
+.photos img {
+    position: absolute;
+    width: 23rem;
+    height: 11rem;
+    object-fit: cover;
+    border: .3rem solid var(--blanc);
+    border-radius: .6rem;
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, .45);
+}
+.photos img:nth-child(1) { top: 3rem;  left: 1rem;  transform: rotate(-6deg); }
+.photos img:nth-child(2) { top: 13rem; left: 6rem;  transform: rotate(4deg); }
+.photos img:nth-child(3) { top: 23rem; left: 2rem;  transform: rotate(-3deg); }
+
+.bloc-histoire h2 {
+    font-family: var(--f-section);
+    font-weight: 400;
+    font-size: 2.625rem;       /* 42px */
+    line-height: 1.5;
+    color: var(--jaune);
+    margin: 0 0 2rem;
+}
+.bloc-histoire p {
+    font-size: 1.625rem;       /* 26px */
+    line-height: 1.625;
+    margin: 0 0 2.6rem;
+}
+
+.zone-api { max-width: 100rem; margin: 0 auto; padding: 0 4rem; text-align: center; }
+#resultat-api:not(:empty) {
+    margin-top: 3rem;
+    background: var(--marron);
+    border-radius: 3rem;
+    padding: 2.4rem 3.4rem;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    text-align: left;
+}
+/* Le bouton exigé par API.js */
+#qui_sommes_nous {
+    border: 0;
+    cursor: pointer;
+    background: var(--marron);
+    color: var(--blanc);
+    font-family: var(--f-bouton);
+    font-size: 2rem;
+    padding: 1.2rem 3rem;
+    border-radius: 2.5rem;
+    transition: background .15s;
+}
+#qui_sommes_nous:hover { background: var(--orange); }
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+@media (max-width: 900px) {
+    html { font-size: 12px; }
+
+    .site-header { grid-template-columns: 1fr; height: auto; gap: 1rem; padding: 1.5rem 1rem; justify-items: center; }
+    .site-header .logo { order: -1; }
+    .site-header .logo img { width: 11rem; height: 11rem; }
+    .nav-gauche, .nav-droite { padding: 0; gap: 1rem; flex-wrap: wrap; justify-content: center; justify-self: center; }
+    .nav-gauche a, .nav-droite a { font-size: 1.5rem; min-width: 0 !important; }
+
+    .titre-page { margin: 3rem 1rem 2rem; font-size: 2.6rem; }
+    .titre-geant { margin: 3rem 1rem 2rem; font-size: 3.6rem; }
+
+    .creation-burger, .zone-ingredient, .bloc-histoire, .bloc-histoire.inverse { grid-template-columns: 1fr; padding: 0 1.6rem; gap: 2.4rem; }
+    .bloc-histoire.inverse .photos { order: 0; }
+    .photos { height: 32rem; }
+    .galerie { grid-template-columns: 1fr 1fr; padding: 0 1.6rem; }
+    .valides { padding: 3rem 1.6rem 0; }
+
+    .site-footer { grid-template-columns: 1fr; justify-items: center; padding: 3rem 1.6rem; }
+    .site-footer .trait { display: none; }
+}
+
+/* message « aucun ingrédient » généré par le JS : pas de numéro */
+#liste_ingredients_final li[style*="red"] { color: #ff8a80 !important; }
+#liste_ingredients_final li[style*="red"]::after { content: none; }

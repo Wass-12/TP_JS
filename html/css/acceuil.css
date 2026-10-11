@@ -1,0 +1,192 @@
+/* ==========================================================
+   ACCUEIL (index.html) — se charge après style.css
+   ========================================================== */
+
+/* ---------- Slider (rempli par js/defilement.js) ---------- */
+.hero {
+    background:
+        linear-gradient(rgba(81, 39, 16, .88), rgba(38, 4, 4, .92)),
+        url("../image/design/motif.png") center / 14rem repeat;
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+}
+
+#slider {
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#slider #main-img {
+    width: 100%;
+    max-width: 42rem;
+    height: 30rem;
+    object-fit: cover;
+    border-radius: 2.4rem;
+    border: .4rem solid var(--jaune);
+    box-shadow: 0 1.6rem 3.6rem rgba(0, 0, 0, .5);
+    margin-bottom: 1.6rem;
+}
+
+#slider #nom-img {
+    font-family: var(--f-nav);
+    font-size: 2.4rem;
+    color: var(--jaune);
+    margin: 0 0 1.6rem;
+}
+
+#slider .thumbs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#slider .thumbs img {
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+    border-radius: 1.2rem;
+    cursor: pointer;
+    border: .25rem solid transparent;
+    opacity: .75;
+    transition: transform .2s, opacity .2s, border-color .2s;
+}
+
+#slider .thumbs img:hover {
+    transform: scale(1.08);
+    opacity: 1;
+    border-color: var(--orange);
+}
+
+.hero .btn { margin-top: 2.4rem; }
+
+/* ---------- Accroche ---------- */
+.accroche {
+    font-family: var(--f-titre);
+    font-weight: 400;
+    font-size: 3.375rem;
+    text-align: center;
+    max-width: 36rem;
+    margin: 5rem auto 4rem;
+    line-height: 1.25;
+}
+
+/* ---------- Trois cartes ---------- */
+.trio {
+    display: grid;
+    grid-template-columns: 31.4rem 1fr 31.4rem;
+    gap: 2rem;
+    align-items: start;
+    padding: 0 1.8rem;
+}
+
+.trio .carte {
+    background: var(--marron);
+    padding: 3rem 2.4rem 3rem;
+    min-height: 33.8rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.trio .carte h2 {
+    font-family: var(--f-nav);
+    font-weight: 400;
+    font-size: 1.875rem;
+    line-height: 1.25;
+    margin: 0 0 1.6rem;
+}
+.trio .carte p {
+    font-family: var(--f-titre);
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin: 0 0 2rem;
+}
+.trio .carte .btn { margin-top: auto; padding: 1rem 2.6rem; width: 18.4rem; }
+
+.trio .centre img {
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+    display: block;
+}
+
+/* ---------- Bande de motifs ---------- */
+.bande-motif {
+    height: 19.75rem;
+    margin-top: 1.6rem;
+    background: url("../image/design/motif.png") 0 0 / auto 100% repeat-x;
+    opacity: .9;
+}
+
+/* ---------- Deux panneaux ---------- */
+.duo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+    margin-top: 0;
+}
+
+.duo .mois {
+    background: var(--marron);
+    min-height: 35.4rem;
+    padding: 2.4rem 3rem;
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: 2rem;
+    align-items: start;
+    position: relative;
+}
+.duo .mois h2 {
+    font-family: var(--f-nav);
+    font-weight: 400;
+    font-size: 1.875rem;
+    line-height: 1.25;
+    margin: 0;
+}
+.duo .mois .visuel { text-align: center; padding-top: 1rem; }
+.duo .mois .visuel img.burger { width: 25.8rem; max-width: 100%; display: block; margin: 0 auto; }
+.duo .mois .visuel img.etoiles { width: 13.75rem; margin: 0 auto 1.4rem; display: block; }
+
+.duo .savoir {
+    background: var(--orange);
+    min-height: 51.75rem;
+    padding: 3rem 4rem 3rem;
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: 2rem;
+    align-content: start;
+}
+.duo .savoir .titre {
+    font-family: var(--f-titre);
+    font-size: 3.375rem;
+    text-align: center;
+    margin: 2rem 0 2rem;
+    grid-column: 1 / -1;
+}
+.duo .savoir h2 {
+    font-family: var(--f-nav);
+    font-weight: 400;
+    font-size: 1.875rem;
+    line-height: 1.25;
+    margin: 0;
+}
+.duo .savoir p {
+    font-family: var(--f-titre);
+    font-size: 2rem;
+    line-height: 1.5;
+    margin: 0 0 2rem;
+}
+.duo .savoir .logo-savoir { width: 20rem; display: block; margin: 0 0 1rem auto; }
+.duo .savoir .btn { margin-top: 1rem; }
+
+@media (max-width: 900px) {
+    .hero { padding: 2rem 1rem; }
+    #slider #main-img { height: 22rem; }
+    .trio, .duo, .duo .mois, .duo .savoir { grid-template-columns: 1fr; }
+    .duo .savoir .titre { grid-column: auto; }
+    .trio .centre { order: -1; }
+    .trio .carte { min-height: 0; }
+    .bande-motif { height: 10rem; }
+}

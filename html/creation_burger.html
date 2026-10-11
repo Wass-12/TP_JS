@@ -3,38 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des ingrédients validés</title>
-
-    <link rel="stylesheet" href="css/index.css">
+    <title>Click Burger — Créer votre Burger</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-
-<nav class="nav">
-  <a href="index.html">Accueil</a>
-  <a href="creation_ingrediant.html">Création Ingrédient</a>
-  <a href="qui_sommes_nous.html">Qui sommes-nous</a>
-</nav>
-
-<header>
-    <h1>Ingrédients validés</h1>
+<div class="page">
+<header class="site-header">
+    <nav class="nav-gauche">
+        <a href="index.html">Accueil</a>
+        <a href="qui_sommes_nous.html">Qui sommes nous?</a>
+    </nav>
+    <a class="logo" href="index.html"><img src="image/design/logo.png" alt="Click Burger"></a>
+    <nav class="nav-droite">
+        <a href="creation_burger.html" class="actif">Creation Burger</a>
+        <a href="creation_ingrediant.html">Creation Ingredient</a>
+    </nav>
 </header>
 
 <main>
-    
-    <div class="card">
-        <ul id="liste_ingredients_final"></ul>
+    <h1 class="titre-page">Créer votre Burger</h1>
 
-        <!-- <a href="index.html">← Retour à l'accueil</a> -->
-    </div>
+    <section class="creation-burger">
+        <div class="visuel">
+            <img src="image/design/burger-compose.png" alt="Burger en cours de composition">
+        </div>
+
+        <div class="panneau">
+            <h2>Ingrédients validés</h2>
+            <ul id="liste_ingredients_final"></ul>
+            <div class="actions">
+                <button id="btnConfirmer">Valider</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="recap"></div>
 </main>
 
-<button id="btnConfirmer">confirmer le choix </button>
-
-<div id="recap"></div>
-
+<footer class="site-footer">
+    <div class="pied-logo"><img src="image/design/logo.png" alt="Click Burger"></div>
+    <div class="trait"></div>
+    <nav class="pied-liens">
+        <a href="index.html">Accueil</a>
+        <a href="qui_sommes_nous.html">Qui sommes nous?</a>
+        <a href="creation_burger.html">Creation Burger</a>
+        <a href="creation_ingrediant.html">Creation Ingredient</a>
+    </nav>
+    <div class="trait"></div>
+    <div class="reseaux">
+        <a href="#" aria-label="WhatsApp">wa</a>
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+    </div>
+</footer>
+</div>
 
 <script src="js/validation_burger.js"></script>
-
 </body>
 </html>

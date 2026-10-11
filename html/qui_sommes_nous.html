@@ -3,38 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page 2</title>
-
-    <a href="index.html">Aller à l'accueil</a>
-    <link rel="stylesheet" href="css/index.css">
+    <title>Click Burger — Qui sommes-nous</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <nav class="nav">
-  <a href="index.html">Accueil</a>
-  <a href="creation_burger.html">Création Burger</a>
-  <a href="creation_ingrediant.html">Création Ingrédient</a>
-  <button id="qui_sommes_nous">Qui sommes-nous ?</button>
-</nav>
+<div class="page">
+<header class="site-header">
+    <nav class="nav-gauche">
+        <a href="index.html">Accueil</a>
+        <a href="qui_sommes_nous.html" class="actif">Qui sommes nous?</a>
+    </nav>
+    <a class="logo" href="index.html"><img src="image/design/logo.png" alt="Click Burger"></a>
+    <nav class="nav-droite">
+        <a href="creation_burger.html">Creation Burger</a>
+        <a href="creation_ingrediant.html">Creation Ingredient</a>
+    </nav>
+</header>
 
+<main>
+    <h1 class="titre-geant">QUI SOMMES NOUS?</h1>
 
-    <header>
-        <h1>Page 2</h1>
-    </header>
+    <section class="bloc-histoire">
+        <div class="photos"><img src="image/design/burger-closeup.jpg" alt=""><img src="image/design/burger-closeup.jpg" alt=""><img src="image/design/burger-closeup.jpg" alt=""></div>
+        <div class="texte"><h2>L'AVENTURE CLICK BURGER</h2><p>Tout a commencé en 2018, quand deux amis passionnés de burgers ont eu une idée un peu folle : créer un restaurant où chacun pourrait inventer le burger de ses rêves. C’est ainsi qu’est né Burger Factory, devenu Click Burger, un lieu unique où la créativité est reine !</p><p>Notre mission ? Transformer chaque repas en une expérience artistique. Nous sélectionnons rigoureusement nos ingrédients pour vous offrir le meilleur de la gourmandise, tout en vous laissant le contrôle total de votre assiette. Chez nous, vous n'êtes pas seulement un client, vous êtes le chef !</p></div>
+    </section>
 
-    <main>
-        <div class="card">
-            <h1>Qui sommes-nous ?</h1>
+    <section class="bloc-histoire inverse">
+        <div class="texte"><h2>NOS VALEURS</h2><p>Chez Click Burger, nos valeurs reposent sur la créativité, la qualité et le plaisir de partager. Nous croyons que chaque client mérite un burger qui lui ressemble. C’est pourquoi nous lui donnons la liberté de composer son propre burger en choisissant ses ingrédients préférés. Nous privilégions des produits de qualité, un service chaleureux et une expérience simple et amusante. Notre objectif est de faire de chaque visite un moment unique, où chacun peut laisser parler son imagination et savourer une création qui lui correspond. Chez Click Burger, un clic, un choix, un burger à votre image !</p></div>
+        <div class="photos"><img src="image/design/burger-closeup.jpg" alt=""><img src="image/design/burger-closeup.jpg" alt=""><img src="image/design/burger-closeup.jpg" alt=""></div>
+    </section>
 
-             <p>
-              Notre restaurant travaille avec des produits locaux.
-             </p>
-             <div id="resultat-api"></div>
+    <section class="bloc-histoire">
+        <div class="photos"><img src="image/design/burger-closeup.jpg" alt=""><img src="image/design/burger-closeup.jpg" alt=""><img src="image/design/burger-closeup.jpg" alt=""></div>
+        <div class="texte"><h2>NOTRE OFFRE</h2><p>Chez Click Burger, notre offre repose sur un concept original : permettre à chaque client de créer le burger de ses rêves ! 🍔 Grâce à un large choix de pains, de viandes, de fromages, de sauces et de garnitures, chacun peut personnaliser son burger selon ses goûts. Mais chez Click Burger, la créativité ne s’arrête pas là : nos clients peuvent également imaginer et créer leurs propres ingrédients et recettes, pour donner vie à des associations de saveurs uniques. Des recettes classiques aux créations les plus originales, tout est pensé pour laisser libre cours à l’imagination. Des accompagnements et des boissons viennent compléter l’expérience pour un repas gourmand et personnalisé.</p><p>Chez Click Burger, vous ne choisissez pas seulement votre burger, vous l’inventez !</p></div>
+    </section>
 
-            <script src="js/API.js"></script>
-            <a href="index.html">← Retour à l'accueil</a>
-        </div>
-    </main>
+    <section class="bloc-histoire inverse">
+        <div class="texte"><h2>NOS ENGAGEMENTS</h2><p>Chez Click Burger, nous nous engageons à offrir à chaque client une expérience gourmande, personnalisée et de qualité. Nous mettons la créativité au cœur de notre concept en permettant à chacun de composer son burger et même d'imaginer ses propres ingrédients. Nous accordons une grande importance à la satisfaction de nos clients, à la fraîcheur des produits et à la diversité des choix proposés. Nous souhaitons également créer un environnement convivial où chacun peut exprimer ses goûts et découvrir de nouvelles saveurs. Notre engagement est simple : proposer des burgers qui ressemblent à nos clients, tout en leur garantissant un moment agréable et gourmand.</p></div>
+        <div class="photos"><img src="image/design/burger-closeup.jpg" alt=""><img src="image/design/burger-closeup.jpg" alt=""><img src="image/design/burger-closeup.jpg" alt=""></div>
+    </section>
 
+    <section class="zone-api">
+        <!-- bouton et zone de résultat utilisés par js/API.js -->
+        <button id="qui_sommes_nous">Découvrir notre ferme bio partenaire</button>
+        <div id="resultat-api"></div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="pied-logo"><img src="image/design/logo.png" alt="Click Burger"></div>
+    <div class="trait"></div>
+    <nav class="pied-liens">
+        <a href="index.html">Accueil</a>
+        <a href="qui_sommes_nous.html">Qui sommes nous?</a>
+        <a href="creation_burger.html">Creation Burger</a>
+        <a href="creation_ingrediant.html">Creation Ingredient</a>
+    </nav>
+    <div class="trait"></div>
+    <div class="reseaux">
+        <a href="#" aria-label="WhatsApp">wa</a>
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+    </div>
+</footer>
+</div>
+
+<script src="js/API.js"></script>
 </body>
 </html>
