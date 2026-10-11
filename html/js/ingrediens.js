@@ -8,93 +8,96 @@ let ingredientTrouve = null;
 // Toutes les listes d’ingrédients pour chaque burger
 const ingredientsData = {
     "Burger Bœuf": [
-        "Pain brioché",
-        "Steak de bœuf",
-        "Cheddar",
-        "Salade",
-        "Tomate",
-        "Oignon rouge",
-        "Sauce burger"
+        { nom: "Pain brioché", quantite: 3 },
+        { nom: "Steak de bœuf", quantite: 3 },
+        { nom: "Cheddar", quantite: 3 },
+        { nom: "Salade", quantite: 3 },
+        { nom: "Tomate", quantite: 3 },
+        { nom: "Oignon rouge", quantite: 3 },
+        { nom: "Sauce burger", quantite: 3 }
     ],
 
     "Burger Bacon": [
-        "Pain brioché",
-        "Steak de bœuf",
-        "Bacon grillé",
-        "Cheddar",
-        "Oignon croustillant",
-        "Sauce barbecue"
+        { nom: "Pain brioché", quantite: 3 },
+        { nom: "Steak de bœuf", quantite: 3 },
+        { nom: "Bacon grillé", quantite: 3 },
+        { nom: "Cheddar", quantite: 3 },
+        { nom: "Oignon croustillant", quantite: 3 },
+        { nom: "Sauce barbecue", quantite: 3 }
     ],
 
     "Burger Étage": [
-        "Pain brioché",
-        "Double steak",
-        "Double cheddar",
-        "Salade",
-        "Tomate",
-        "Sauce spéciale"
+        { nom: "Pain brioché", quantite: 3 },
+        { nom: "Double steak", quantite: 3 },
+        { nom: "Double cheddar", quantite: 3 },
+        { nom: "Salade", quantite: 3 },
+        { nom: "Tomate", quantite: 3 },
+        { nom: "Sauce spéciale", quantite: 3 }
     ],
 
     "Burger Mini": [
-        "Petit pain",
-        "Mini steak",
-        "Cheddar",
-        "Cornichons",
-        "Ketchup"
+        { nom: "Petit pain", quantite: 3 },
+        { nom: "Mini steak", quantite: 3 },
+        { nom: "Cheddar", quantite: 3 },
+        { nom: "Cornichons", quantite: 3 },
+        { nom: "Ketchup", quantite: 3 }
     ],
 
     "Burger Valeria": [
-        "Pain brioché",
-        "Poulet pané",
-        "Salade",
-        "Tomate",
-        "Sauce blanche",
-        "Mozzarella"
+        { nom: "Pain brioché", quantite: 3 },
+        { nom: "Poulet pané", quantite: 3 },
+        { nom: "Salade", quantite: 3 },
+        { nom: "Tomate", quantite: 3 },
+        { nom: "Sauce blanche", quantite: 3 },
+        { nom: "Mozzarella", quantite: 3 }
     ],
 
     "Burger Cheese": [
-        "Pain brioché",
-        "Steak de bœuf",
-        "Double cheddar",
-        "Oignon",
-        "Sauce fromage"
+        { nom: "Pain brioché", quantite: 3 },
+        { nom: "Steak de bœuf", quantite: 3 },
+        { nom: "Double cheddar", quantite: 3 },
+        { nom: "Oignon", quantite: 3 },
+        { nom: "Sauce fromage", quantite: 3 }
     ],
 
     "Burger Régime": [
-        "Pain complet",
-        "Steak végétal",
-        "Salade",
-        "Tomate",
-        "Concombre",
-        "Sauce légère"
+        { nom: "Pain complet", quantite: 3 },
+        { nom: "Steak végétal", quantite: 3 },
+        { nom: "Salade", quantite: 3 },
+        { nom: "Tomate", quantite: 3 },
+        { nom: "Concombre", quantite: 3 },
+        { nom: "Sauce légère", quantite: 3 }
     ],
 
     "Hamburger Régime": [
-        "Pain complet",
-        "Steak végétal",
-        "Tomate",
-        "Oignon",
-        "Sauce vegan"
+        { nom: "Pain complet", quantite: 3 },
+        { nom: "Steak végétal", quantite: 3 },
+        { nom: "Tomate", quantite: 3 },
+        { nom: "Oignon", quantite: 3 },
+        { nom: "Sauce vegan", quantite: 3 }
     ],
 
     "Burger Épicé": [
-        "Pain brioché",
-        "Steak de bœuf",
-        "Jalapeños",
-        "Sauce piquante",
-        "Cheddar",
-        "Oignon rouge"
+        { nom: "Pain brioché", quantite: 3 },
+        { nom: "Steak de bœuf", quantite: 3 },
+        { nom: "Jalapeños", quantite: 3 },
+        { nom: "Sauce piquante", quantite: 3 },
+        { nom: "Cheddar", quantite: 3 },
+        { nom: "Oignon rouge", quantite: 3 }
     ]
 };
+
 // On récupère la liste d’ingrédients du burger
 const liste = ingredientsData[burger];
+
+
 
 // document.getElementById("titre").textContent = burger;
 
 // On affiche les ingrédients
 if (liste) {
     liste.forEach(ing => {
-        document.getElementById("liste").innerHTML += `<li>${ing}</li>`;
+        document.getElementById("liste").innerHTML += `<li>${ing.nom} (x${ing.quantite})</li>`;
     });
 } else {
     document.getElementById("liste").innerHTML = `
@@ -113,7 +116,7 @@ inputIng.addEventListener("input", function () {
     const texte = inputIng.value.toLowerCase();
 
     // On cherche un ingrédient qui correspond
-    const match = liste.find(ing => ing.toLowerCase().includes(texte));
+    const match = liste.find(ing => ing.nom.toLowerCase().includes(texte));
 
     if (match) {
         ingredientTrouve = match;
@@ -148,19 +151,40 @@ btnIngredient.addEventListener("click", function () {
         !ingredientsValides.includes(ingredientTrouve)
     ) {
 
+        //Ajouter dans ingredientsValides
         ingredientsValides.push(ingredientTrouve);
 
-        // AJOUT DANS LA LISTE PRINCIPALE
-        document.getElementById("liste").innerHTML += `<li>${ingredientTrouve}</li>`;
+        //Trouver l’ingrédient dans la liste du burger
+        const ingOriginal = liste.find(ing => ing.nom === ingredientTrouve.nom);
 
+        //Vérifier si on peut retirer
+        if (ingOriginal && ingOriginal.quantite > 0) {
+            ingOriginal.quantite--;
+        }
+
+        // Réafficher la liste principale
+        document.getElementById("liste").innerHTML = "";
+        liste.forEach(ing => {
+            document.getElementById("liste").innerHTML += `<li>${ing.nom} (x${ing.quantite})</li>`;
+        });
+
+        //Sauvegarder dans le localStorage
         localStorage.setItem(
             "liste_ingrédients",
             JSON.stringify(ingredientsValides)
         );
 
+        //Réafficher les ingrédients validés
         afficherIngredientsValides();
     }
 
 });
 
+
+
+
+
+localStorage.clear();
+
 console.log(ingredientsValides);
+
