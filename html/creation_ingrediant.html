@@ -3,49 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page 2</title>
-
-    <link rel="stylesheet" href="css/index.css">
+    <title>Click Burger — Créer votre Ingrédient</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-
-    <nav class="nav">
+<div class="page">
+<header class="site-header">
+    <nav class="nav-gauche">
         <a href="index.html">Accueil</a>
-        <a href="creation_burger.html">Création Burger</a>
-        <a href="qui_sommes_nous.html">Qui sommes-nous</a>
+        <a href="qui_sommes_nous.html">Qui sommes nous?</a>
     </nav>
+    <a class="logo" href="index.html"><img src="image/design/logo.png" alt="Click Burger"></a>
+    <nav class="nav-droite">
+        <a href="creation_burger.html">Creation Burger</a>
+        <a href="creation_ingrediant.html" class="actif">Creation Ingredient</a>
+    </nav>
+</header>
 
-    <header>
-        <h1>Page 2</h1>
-    </header>
+<main>
+    <h1 class="titre-page">Créer votre Ingrédient</h1>
 
-    <main>
-        <div class="card">
+    <section class="zone-ingredient">
+        <!-- sélecteur d'ingrédient -->
+        <div class="formulaire" id="ingredient-list-selection">
+            <label for="searchIng">Nom de l'ingrédient</label>
+            <input type="text" id="searchIng" placeholder="Ex: Tomate fraîche, Bacon grillé...">
+            <button id="btnIngredient">Ajouter l'ingrédient</button>
+            <div id="resultIng"></div>
+            <div id="resultat"></div>
+        </div>
+
+        <!-- composition du burger choisi -->
+        <div class="carte-burger">
             <h1 id="titre"></h1>
             <ul id="liste"></ul>
         </div>
-    </main>
-     
+    </section>
 
-   
+    <section class="valides">
+        <h3>Ingrédients validés</h3>
+        <ul id="listeIngredientsValides"></ul>
+        <a class="btn" href="creation_burger.html">Suivant</a>
+    </section>
 
-    <!-- selecteur infgrédient -->
-    <div id="ingredient-list-selection">
-      <input type="text" id="searchIng" placeholder="Tape un ingrédient...">
-<button id="btnIngredient">Ajouter</button>
+    <h2 class="titre-bloc">Liste des Ingrédients</h2>
+    <section class="galerie">
+            <figure><img src="image/design/tomate.jpg" alt="Tomate"><figcaption>Tomate</figcaption></figure>
+            <figure><img src="image/design/cornichons.jpg" alt="Cornichons"><figcaption>Cornichons</figcaption></figure>
+            <figure><img src="image/design/pain-brioche.jpg" alt="Pain Brioché"><figcaption>Pain Brioché</figcaption></figure>
+            <figure><img src="image/design/steak.jpg" alt="Steak"><figcaption>Steak</figcaption></figure>
+            <figure><img src="image/design/fromage.jpg" alt="Fromage"><figcaption>Fromage</figcaption></figure>
+            <figure><img src="image/design/salade.jpg" alt="Salade"><figcaption>Salade</figcaption></figure>
+            <figure><img src="image/design/champignons.jpg" alt="Champignons"><figcaption>Champignons</figcaption></figure>
+            <figure><img src="image/design/bacon.jpg" alt="Bacon"><figcaption>Bacon</figcaption></figure>
+            <figure><img src="image/design/oignon.jpg" alt="Oignon"><figcaption>Oignon</figcaption></figure>
+            <figure><img src="image/design/sauce-burger.jpg" alt="Sauce Burger"><figcaption>Sauce Burger</figcaption></figure>
+            <figure><img src="image/design/ketchup.jpg" alt="Ketchup"><figcaption>Ketchup</figcaption></figure>
+    </section>
+</main>
 
-<div id="resultIng"></div>
-
+<footer class="site-footer">
+    <div class="pied-logo"><img src="image/design/logo.png" alt="Click Burger"></div>
+    <div class="trait"></div>
+    <nav class="pied-liens">
+        <a href="index.html">Accueil</a>
+        <a href="qui_sommes_nous.html">Qui sommes nous?</a>
+        <a href="creation_burger.html">Creation Burger</a>
+        <a href="creation_ingrediant.html">Creation Ingredient</a>
+    </nav>
+    <div class="trait"></div>
+    <div class="reseaux">
+        <a href="#" aria-label="WhatsApp">wa</a>
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="LinkedIn">in</a>
     </div>
+</footer>
+</div>
 
-    <div id="resultat"></div>
-    
-     <h3>Ingrédients validés</h3>
-<ul id="listeIngredientsValides"></ul>
-<a href="creation_burger.html">suivant</a>
-    <!-- synchronisation des données entre le localStorage  OK (liste des ingrédients du burger sélectionné) -->
-    <!-- <script src="../js/defilement.js"></script> -->
-     <script src="js/ingrediens.js"></script>
+<!-- synchronisation des données via le localStorage (liste des ingrédients du burger sélectionné) -->
+<script src="js/ingrediens.js"></script>
 </body>
 </html>

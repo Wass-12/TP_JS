@@ -1,23 +1,91 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Test slider</title>
-  <link rel="stylesheet" href="css/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Burger — Accueil</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/acceuil.css">
 </head>
 <body>
-  <nav class="nav">
-  <a href="creation_burger.html">Création Burger</a>
-  <a href="creation_ingredient.html">Création Ingrédient</a>
-  <!-- <button id="qui_sommes_nous"></button> -->
-  <a href="qui_sommes_nous.html">Qui sommes-nous ?</a>
-</nav>
+<div class="page">
+<header class="site-header">
+    <nav class="nav-gauche">
+        <a href="index.html" class="actif">Accueil</a>
+        <a href="qui_sommes_nous.html">Qui sommes nous?</a>
+    </nav>
+    <a class="logo" href="index.html"><img src="image/design/logo.png" alt="Click Burger"></a>
+    <nav class="nav-droite">
+        <a href="creation_burger.html">Creation Burger</a>
+        <a href="creation_ingrediant.html">Creation Ingredient</a>
+    </nav>
+</header>
 
-    <p>test</p>
-  <div id="slider"></div>
-  <p><a href="creation_ingrediant.html">Création Ingrédient</a></p>
+<main>
+    <section class="hero">
+        <!-- rempli par js/defilement.js -->
+        <div id="slider"></div>
+        <a class="btn" href="creation_ingrediant.html">Choisir les ingrédients</a>
+    </section>
 
-  <script src="js/defilement.js"></script>
-  <!-- <script src="js/API.js"></script> -->
+    <h2 class="accroche">Laissez libre cours à votre créativité</h2>
+
+    <section class="trio">
+        <article class="carte">
+            <h2>CREER UN BURGER QUI VOUS RESSEMBLE</h2>
+            <p>Chaque client devient le chef de sa propre création en inventant des associations de saveurs uniques. Chacun est libre de laisser parler son imagination et de créer un burger qui lui ressemble. Le plaisir réside autant dans la création que dans la dégustation !</p>
+            <a class="btn" href="creation_burger.html">Créer Burger</a>
+        </article>
+        <div class="centre"><img src="image/design/chefs.jpg" alt="Des burgers préparés avec passion"></div>
+        <article class="carte">
+            <h2>CREER DES INGREDIENTS AUXQUELLES VOUS SEUL PENSEZ</h2>
+            <p>La créativité n’a pas de limites ! Imaginez vos propres ingrédients, inventez de nouvelles saveurs et osez des mélanges originaux. Chaque création devient unique et reflète vos envies. Ici, vous ne suivez pas les recettes, vous les inventez !</p>
+            <a class="btn" href="creation_ingrediant.html">Créer Ingrédient</a>
+        </article>
+    </section>
+
+    <div class="bande-motif" role="presentation"></div>
+
+    <section class="duo">
+        <div class="mois">
+            <h2>LE BURGER LE PLUS ORIGINAL CE MOIS CI</h2>
+            <div class="visuel">
+                <img class="burger" src="image/design/burger-mois.png" alt="Le burger du mois">
+                <img class="etoiles" src="image/design/etoiles.png" alt="Cinq étoiles">
+                <a class="btn" href="creation_burger.html">Découvrir</a>
+            </div>
+        </div>
+        <div class="savoir">
+            <h2 class="titre">A savoir</h2>
+            <h2>DES BURGERS FAITS AVEC PASSION</h2>
+            <div>
+                <p>Tout a commencé en 2018, quand deux amis passionnés de burgers ont eu une idée un peu folle : créer un restaurant où chacun pourrait inventer le burger de ses rêves. C’est ainsi qu’est né Burger Factory un lieu où la créativité est reine !</p>
+                <img class="logo-savoir" src="image/design/logo.png" alt="Click Burger">
+                <a class="btn btn--marron" href="qui_sommes_nous.html">Qui sommes nous?</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="pied-logo"><img src="image/design/logo.png" alt="Click Burger"></div>
+    <div class="trait"></div>
+    <nav class="pied-liens">
+        <a href="index.html">Accueil</a>
+        <a href="qui_sommes_nous.html">Qui sommes nous?</a>
+        <a href="creation_burger.html">Creation Burger</a>
+        <a href="creation_ingrediant.html">Creation Ingredient</a>
+    </nav>
+    <div class="trait"></div>
+    <div class="reseaux">
+        <a href="#" aria-label="WhatsApp">wa</a>
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+    </div>
+</footer>
+</div>
+
+<script src="js/defilement.js"></script>
+<!-- <script src="js/API.js"></script> -->
 </body>
 </html>
