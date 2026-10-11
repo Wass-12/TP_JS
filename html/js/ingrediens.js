@@ -8,7 +8,7 @@ let ingredientTrouve = null;
 // Toutes les listes d’ingrédients pour chaque burger
 const ingredientsData = {
     "Burger Bœuf": [
-        { nom: "Pain brioché", quantite: 3 },
+        { nom: "Pain brioché", quantite: 1 },
         { nom: "Steak de bœuf", quantite: 3 },
         { nom: "Cheddar", quantite: 3 },
         { nom: "Salade", quantite: 3 },
@@ -146,45 +146,57 @@ const btnIngredient = document.getElementById("btnIngredient");
 
 btnIngredient.addEventListener("click", function () {
 
-    if (
-        ingredientTrouve &&
-        !ingredientsValides.includes(ingredientTrouve)
-    ) {
-
-        //Ajouter dans ingredientsValides
-        ingredientsValides.push(ingredientTrouve);
-
-        //Trouver l’ingrédient dans la liste du burger
-        const ingOriginal = liste.find(ing => ing.nom === ingredientTrouve.nom);
-
-        //Vérifier si on peut retirer
-        if (ingOriginal && ingOriginal.quantite > 0) {
-            ingOriginal.quantite--;
-        }
-
-        // Réafficher la liste principale
-        document.getElementById("liste").innerHTML = "";
-        liste.forEach(ing => {
-            document.getElementById("liste").innerHTML += `<li>${ing.nom} (x${ing.quantite})</li>`;
-        });
-
-        //Sauvegarder dans le localStorage
-        localStorage.setItem(
-            "liste_ingrédients",
-            JSON.stringify(ingredientsValides)
-        );
-
-        //Réafficher les ingrédients validés
-        afficherIngredientsValides();
+    if (!ingredientTrouve) {
+        resultIng.innerHTML = `<p style="color:red;">Aucun ingrédient sélectionné</p>`;
+        return;
     }
 
+    // Trouver l’ingrédient dans la liste du burger
+    const ingOriginal = liste.find(ing => ing.nom === ingredientTrouve.nom);
+
+    // Vérifier si stock épuisé
+    if (ingOriginal.quantite <= 0) {
+        resultIng.innerHTML = `<p style="color:red;">Stock épuisé pour : <strong>${ingOriginal.nom}</strong></p>`;
+        return;
+    }
+
+    // Vérifier si déjà validé
+    if (ingredientsValides.includes(ingredientTrouve)) {
+        resultIng.innerHTML = `<p style="color:red;">Cet ingrédient est déjà validé</p>`;
+        return;
+    }
+
+    // Ajouter dans ingredientsValides
+    ingredientsValides.push(ingredientTrouve);
+
+    // Retirer 1 du stock
+    ingOriginal.quantite--;
+
+    // Réafficher la liste principale
+    document.getElementById("liste").innerHTML = "";
+    liste.forEach(ing => {
+        document.getElementById("liste").innerHTML += `<li>${ing.nom} (x${ing.quantite})</li>`;
+    });
+
+    // Sauvegarder
+    localStorage.setItem(
+        "liste_ingrédients",
+        JSON.stringify(ingredientsValides)
+    );
+
+    // Réafficher les ingrédients validés
+    afficherIngredientsValides();
+
+    // Message de confirmation
+    resultIng.innerHTML = `<p style="color:green;">Ingrédient ajouté : <strong>${ingredientTrouve.nom}</strong></p>`;
 });
 
 
 
 
 
-localStorage.clear();
 
-console.log(ingredientsValides);
+// localStorage.clear();
+
+// console.log(ingredientsValides);
 
