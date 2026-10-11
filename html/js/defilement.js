@@ -92,4 +92,4 @@ setInterval(function () {
 // setInterval(function () {
 //   location.reload();
 // }, 15000); // 15000 ms = 15 secondes
-// localStorage.clear();
+localStorage.clear();

@@ -196,7 +196,7 @@ btnIngredient.addEventListener("click", function () {
 
 
 
-// localStorage.clear();
+localStorage.clear();
 
 // console.log(ingredientsValides);
 
