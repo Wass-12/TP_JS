@@ -150,14 +150,17 @@ btnIngredient.addEventListener("click", function () {
 
         ingredientsValides.push(ingredientTrouve);
 
-  localStorage.setItem(
-    "liste_ingrédients",
-    JSON.stringify(ingredientsValides)
-);
+        // AJOUT DANS LA LISTE PRINCIPALE
+        document.getElementById("liste").innerHTML += `<li>${ingredientTrouve}</li>`;
 
-afficherIngredientsValides();
+        localStorage.setItem(
+            "liste_ingrédients",
+            JSON.stringify(ingredientsValides)
+        );
 
+        afficherIngredientsValides();
     }
 
 });
+
 console.log(ingredientsValides);
