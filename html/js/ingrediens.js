@@ -121,7 +121,7 @@ inputIng.addEventListener("input", function () {
     if (match) {
         ingredientTrouve = match;
         resultIng.innerHTML = `
-            <p>Ingrédient trouvé : <strong>${match}</strong></p>
+             <p>Ingrédient trouvé : <strong>${match.nom}</strong></p>
         `;
     } else {
         ingredientTrouve = null;
@@ -139,7 +139,7 @@ function afficherIngredientsValides() {
     listeIngredientsValides.innerHTML = "";
 
     ingredientsValides.forEach(ing => {
-        listeIngredientsValides.innerHTML += `<li>${ing}</li>`;
+        listeIngredientsValides.innerHTML += `<li>${ing.nom}</li>`;
     });
 }
 const btnIngredient = document.getElementById("btnIngredient");
