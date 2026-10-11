@@ -1,0 +1,75 @@
+/* NAVBAR */
+.navbar {
+    background: #512710; /* couleur Figma */
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-right: 25px;   /* équivalent du margin-left de droite */
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: 0.2s;
+}
+
+.nav-left a:hover {
+    color: #E3BE5B;
+}
+
+
+
+.nav-right a:hover {
+    color: #E3BE5B; /* jaune pâle Figma */
+}
+/* SLIDER CONTAINER */
+#slider {
+    width: 100%;
+    max-width: 2000px;
+    /* margin: 30px auto; */
+    padding: 40px 20px;          /* IMPORTANT : pour respirer dans le fond */
+    background: #C4862E;         /* ORANGE Figma */
+    border-radius: 20px;         /* arrondi premium */
+    text-align: center;
+}
+
+/* IMAGE PRINCIPALE */
+#slider #main-img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 16px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+    margin-bottom: 25px;
+}
+
+/* MINIATURES */
+#slider .thumbs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+#slider .thumbs img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: 0.2s;
+}
+
+/* HOVER + ACTIVE */
+#slider .thumbs img:hover {
+    transform: scale(1.05);
+    border-color: #C4862E; /* couleur Figma */
+}
+
+#slider .thumbs img.active {
+    border-color: #E3BE5B; /* jaune pâle Figma */
+    transform: scale(1.08);
+}
