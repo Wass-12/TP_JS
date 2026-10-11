@@ -25,18 +25,18 @@ btnConfirmer.addEventListener("click", function () {
 
     // Image du burger
     const imagesBurger = {
-        "Burger Bœuf": "../image/beef-burger.jpg",
-        "Burger Bacon": "../image/burger_becon.jpg",
-        "Burger Étage": "../image/burger_etage.jpg",
-        "Burger Mini": "../image/burger_mini.jpg",
-        "Burger Valeria": "../image/burger_valeria.jpg",
-        "Burger Cheese": "../image/burger-cheese.jpg",
-        "Burger Régime": "../image/burger-regime.jpg",
-        "Hamburger Régime": "../image/hamburger-regime.jpg",
-        "Burger Épicé": "../image/spicy-burger.jpg"
+        "Burger Bœuf": "image/beef-burger.jpg",
+        "Burger Bacon": "image/burger_becon.jpg",
+        "Burger Étage": "image/burger_etage.jpg",
+        "Burger Mini": "image/burger_mini.jpg",
+        "Burger Valeria": "image/burger_valeria.jpg",
+        "Burger Cheese": "image/burger-cheese.jpg",
+        "Burger Régime": "image/burger-regime.jpg",
+        "Hamburger Régime": "image/hamburger-regime.jpg",
+        "Burger Épicé": "image/spicy-burger.jpg"
     };
 
-    const image = imagesBurger[burger] || "../image/default.png";
+    const image = imagesBurger[burger] || "image/default.png";
 
     // Construction du récapitulatif
     recap.innerHTML = `
