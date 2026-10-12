@@ -30,7 +30,7 @@ const slider = document.getElementById("slider");
 // Génération automatique du HTML via une boucle
 let html = `
   <img id="main-img" src="${images[0]}">
-  <p id="nom-img">${noms[0]}</p>
+  <p id="nom-img">${[]}</p>
   <div class="thumbs">
 `;
 
@@ -66,8 +66,8 @@ for (let i = 0; i < thumbs.length; i++) {
     mainImg.src = cheminImage;     // on change l'image principale
     nomImg.style.display = "block"; 
     nomImg.textContent = description_image;   // le nom suit l'image cliquée
-    clearInterval(defilementAuto);             // on arrête le défilement : le burger choisi reste affiché
-    localStorage.setItem("burgerSelectionne", noms[i]); // stockage information 
+    // clearInterval(defilementAuto);             // on arrête le défilement : le burger choisi reste affiché
+    // localStorage.setItem("burgerSelectionne", noms[i]); // stockage information 
     current = i;                   // on met à jour l'index
   };
 }
@@ -87,9 +87,13 @@ const defilementAuto = setInterval(function () {
   mainImg.src = images[current];
 
   // On met à jour le nom
-  nomImg.textContent = noms[current];
+  nomImg.textContent = [];
 
 }, 10000); // 10 secondes
+
+
+
+
 
 // rafraîchissement de la page toutes les 15 secondes
 // je fais parce que j'arrive pas a faire disparaître le nom de l'image quand je clique sur une miniature quand elle change ( a esseyer de faire marcher) 
