@@ -1,6 +1,6 @@
 const burger = localStorage.getItem("burgerSelectionne");
 document.getElementById("titre").textContent = burger;
-const ingredientsValides =
+let ingredientsValides =
     JSON.parse(localStorage.getItem("liste_ingrédients")) || [];
 
 let ingredientTrouve = null;
@@ -8,82 +8,82 @@ let ingredientTrouve = null;
 // Toutes les listes d’ingrédients pour chaque burger
 const ingredientsData = {
     "Burger Bœuf": [
-        { nom: "Pain brioché", quantite: 1 },
-        { nom: "Steak de bœuf", quantite: 3 },
-        { nom: "Cheddar", quantite: 3 },
-        { nom: "Salade", quantite: 3 },
-        { nom: "Tomate", quantite: 3 },
-        { nom: "Oignon rouge", quantite: 3 },
-        { nom: "Sauce burger", quantite: 3 }
+        { nom: "Pain brioché" },
+        { nom: "Steak de bœuf" },
+        { nom: "Cheddar" },
+        { nom: "Salade" },
+        { nom: "Tomate" },
+        { nom: "Oignon rouge" },
+        { nom: "Sauce burger" }
     ],
 
     "Burger Bacon": [
-        { nom: "Pain brioché", quantite: 3 },
-        { nom: "Steak de bœuf", quantite: 3 },
-        { nom: "Bacon grillé", quantite: 3 },
-        { nom: "Cheddar", quantite: 3 },
-        { nom: "Oignon croustillant", quantite: 3 },
-        { nom: "Sauce barbecue", quantite: 3 }
+        { nom: "Pain brioché" },
+        { nom: "Steak de bœuf" },
+        { nom: "Bacon grillé" },
+        { nom: "Cheddar" },
+        { nom: "Oignon croustillant" },
+        { nom: "Sauce barbecue" }
     ],
 
     "Burger Étage": [
-        { nom: "Pain brioché", quantite: 3 },
-        { nom: "Double steak", quantite: 3 },
-        { nom: "Double cheddar", quantite: 3 },
-        { nom: "Salade", quantite: 3 },
-        { nom: "Tomate", quantite: 3 },
-        { nom: "Sauce spéciale", quantite: 3 }
+        { nom: "Pain brioché" },
+        { nom: "Double steak" },
+        { nom: "Double cheddar" },
+        { nom: "Salade" },
+        { nom: "Tomate" },
+        { nom: "Sauce spéciale" }
     ],
 
     "Burger Mini": [
-        { nom: "Petit pain", quantite: 3 },
-        { nom: "Mini steak", quantite: 3 },
-        { nom: "Cheddar", quantite: 3 },
-        { nom: "Cornichons", quantite: 3 },
-        { nom: "Ketchup", quantite: 3 }
+        { nom: "Petit pain" },
+        { nom: "Mini steak" },
+        { nom: "Cheddar" },
+        { nom: "Cornichons" },
+        { nom: "Ketchup" }
     ],
 
     "Burger Valeria": [
-        { nom: "Pain brioché", quantite: 3 },
-        { nom: "Poulet pané", quantite: 3 },
-        { nom: "Salade", quantite: 3 },
-        { nom: "Tomate", quantite: 3 },
-        { nom: "Sauce blanche", quantite: 3 },
-        { nom: "Mozzarella", quantite: 3 }
+        { nom: "Pain brioché" },
+        { nom: "Poulet pané" },
+        { nom: "Salade" },
+        { nom: "Tomate" },
+        { nom: "Sauce blanche" },
+        { nom: "Mozzarella" }
     ],
 
     "Burger Cheese": [
-        { nom: "Pain brioché", quantite: 3 },
-        { nom: "Steak de bœuf", quantite: 3 },
-        { nom: "Double cheddar", quantite: 3 },
-        { nom: "Oignon", quantite: 3 },
-        { nom: "Sauce fromage", quantite: 3 }
+        { nom: "Pain brioché" },
+        { nom: "Steak de bœuf" },
+        { nom: "Double cheddar" },
+        { nom: "Oignon" },
+        { nom: "Sauce fromage" }
     ],
 
     "Burger Régime": [
-        { nom: "Pain complet", quantite: 3 },
-        { nom: "Steak végétal", quantite: 3 },
-        { nom: "Salade", quantite: 3 },
-        { nom: "Tomate", quantite: 3 },
-        { nom: "Concombre", quantite: 3 },
-        { nom: "Sauce légère", quantite: 3 }
+        { nom: "Pain complet" },
+        { nom: "Steak végétal" },
+        { nom: "Salade" },
+        { nom: "Tomate" },
+        { nom: "Concombre" },
+        { nom: "Sauce légère" }
     ],
 
     "Hamburger Régime": [
-        { nom: "Pain complet", quantite: 3 },
-        { nom: "Steak végétal", quantite: 3 },
-        { nom: "Tomate", quantite: 3 },
-        { nom: "Oignon", quantite: 3 },
-        { nom: "Sauce vegan", quantite: 3 }
+        { nom: "Pain complet" },
+        { nom: "Steak végétal" },
+        { nom: "Tomate" },
+        { nom: "Oignon" },
+        { nom: "Sauce vegan" }
     ],
 
     "Burger Épicé": [
-        { nom: "Pain brioché", quantite: 3 },
-        { nom: "Steak de bœuf", quantite: 3 },
-        { nom: "Jalapeños", quantite: 3 },
-        { nom: "Sauce piquante", quantite: 3 },
-        { nom: "Cheddar", quantite: 3 },
-        { nom: "Oignon rouge", quantite: 3 }
+        { nom: "Pain brioché" },
+        { nom: "Steak de bœuf" },
+        { nom: "Jalapeños" },
+        { nom: "Sauce piquante" },
+        { nom: "Cheddar" },
+        { nom: "Oignon rouge" }
     ]
 };
 
@@ -97,7 +97,7 @@ const liste = ingredientsData[burger];
 // On affiche les ingrédients
 if (liste) {
     liste.forEach(ing => {
-        document.getElementById("liste").innerHTML += `<li>${ing.nom} (x${ing.quantite})</li>`;
+        document.getElementById("liste").innerHTML += `<li>${ing.nom}</li>`;
     });
 } else {
     document.getElementById("liste").innerHTML = `
@@ -139,7 +139,7 @@ function afficherIngredientsValides() {
     listeIngredientsValides.innerHTML = "";
 
     ingredientsValides.forEach(ing => {
-        listeIngredientsValides.innerHTML += `<li>${ing.nom}</li>`;
+        listeIngredientsValides.innerHTML += `<li>${ing.nom} (x${ing.quantite})</li>`;
     });
 }
 const btnIngredient = document.getElementById("btnIngredient");
@@ -151,12 +151,10 @@ btnIngredient.addEventListener("click", function () {
         return;
     }
 
-    // Trouver l’ingrédient dans la liste du burger
-    const ingOriginal = liste.find(ing => ing.nom === ingredientTrouve.nom);
-
-    // Vérifier si stock épuisé
-    if (ingOriginal.quantite <= 0) {
-        resultIng.innerHTML = `<p style="color:red;">Stock épuisé pour : <strong>${ingOriginal.nom}</strong></p>`;
+    // Quantité choisie par l'utilisateur
+    const quantite = parseInt(document.getElementById("quantiteIng").value);
+    if (!quantite || quantite < 1) {
+        resultIng.innerHTML = `<p style="color:red;">Quantité invalide</p>`;
         return;
     }
 
@@ -166,17 +164,9 @@ btnIngredient.addEventListener("click", function () {
         return;
     }
 
-    // Ajouter dans ingredientsValides
+    // Ajouter dans ingredientsValides avec la quantité choisie
+    ingredientTrouve.quantite = quantite;
     ingredientsValides.push(ingredientTrouve);
-
-    // Retirer 1 du stock
-    ingOriginal.quantite--;
-
-    // Réafficher la liste principale
-    document.getElementById("liste").innerHTML = "";
-    liste.forEach(ing => {
-        document.getElementById("liste").innerHTML += `<li>${ing.nom} (x${ing.quantite})</li>`;
-    });
 
     // Sauvegarder
     localStorage.setItem(
@@ -196,7 +186,7 @@ btnIngredient.addEventListener("click", function () {
 
 
 
-localStorage.clear();
+// localStorage.clear();
 
 // console.log(ingredientsValides);
 

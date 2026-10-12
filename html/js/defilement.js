@@ -63,13 +63,15 @@ for (let i = 0; i < thumbs.length; i++) {
     let description_image = noms[i];   // on récupère le chemin de l'image
     mainImg.src = cheminImage;     // on change l'image principale
     nomImg.style.display = "block"; 
+    nomImg.textContent = description_image;   // le nom suit l'image cliquée
+    clearInterval(defilementAuto);             // on arrête le défilement : le burger choisi reste affiché
     localStorage.setItem("burgerSelectionne", noms[i]); // stockage information 
     current = i;                   // on met à jour l'index
   };
 }
 //test boucle 
 
-setInterval(function () {
+const defilementAuto = setInterval(function () {
 
   // On avance d'une image
   current++;

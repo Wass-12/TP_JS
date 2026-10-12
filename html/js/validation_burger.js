@@ -11,7 +11,7 @@ if (ingredientsValides.length === 0) {
 } else {
     // Affichage des ingrédients validés
     ingredientsValides.forEach(ing => {
-        liste_ingredients_final.innerHTML += `<li>${ing.nom}</li>`;
+        liste_ingredients_final.innerHTML += `<li>${ing.nom} (x${ing.quantite})</li>`;
     });
 }
 
@@ -47,9 +47,7 @@ btnConfirmer.addEventListener("click", function () {
 
         <h3>Ingrédients sélectionnés :</h3>
         <ul>
-            ${ingredientsValides.map(ing => `<li>${ing.nom}</li>`).join("")}
+            ${ingredientsValides.map(ing => `<li>${ing.nom} (x${ing.quantite})</li>`).join("")}
         </ul>
     `;
 });
-console.log(burger);
-console.log(imagesBurger[burger]);
