@@ -1,3 +1,5 @@
+// encore dsl pour ce code broullion du a notre manque de compréhension on a fais fausse route
+// merci pour bien veillance et bonne corretion a vous 
 const images = [
   "image/beef-burger.jpg",
   "image/burger_becon.jpg",

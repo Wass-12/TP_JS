@@ -1,3 +1,5 @@
+// encore dsl pour ce code broullion du a notre manque de compréhension on a fais fausse route
+// merci pour bien veillance et bonne corretion a vous d
 // Quand l'utilisateur clique sur "Qui sommes-nous ?"
 document.querySelector("#qui_sommes_nous").addEventListener("click", () => {
 //window.location.href = "qui_sommes_nous.html";

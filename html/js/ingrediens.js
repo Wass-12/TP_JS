@@ -1,109 +1,110 @@
+// encore dsl pour ce code broullion du a notre manque de compréhension on a fais fausse route
+// merci pour bien veillance et bonne corretion a vous 
 const burger = localStorage.getItem("burgerSelectionne");
-document.getElementById("titre").textContent = burger;
 let ingredientsValides =
     JSON.parse(localStorage.getItem("liste_ingrédients")) || [];
 
 let ingredientTrouve = null;
 
-// Toutes les listes d’ingrédients pour chaque burger
-const ingredientsData = {
-    "Burger Bœuf": [
-        { nom: "Pain brioché" },
-        { nom: "Steak de bœuf" },
-        { nom: "Cheddar" },
-        { nom: "Salade" },
-        { nom: "Tomate" },
-        { nom: "Oignon rouge" },
-        { nom: "Sauce burger" }
-    ],
+// Toutes les listes d’ingrédients pour chaque burger (initule creation a la demande du client )
+// const ingredientsData = {
+//     "Burger Bœuf": [
+//         { nom: "Pain brioché" },
+//         { nom: "Steak de bœuf" },
+//         { nom: "Cheddar" },
+//         { nom: "Salade" },
+//         { nom: "Tomate" },
+//         { nom: "Oignon rouge" },
+//         { nom: "Sauce burger" }
+//     ],
 
-    "Burger Bacon": [
-        { nom: "Pain brioché" },
-        { nom: "Steak de bœuf" },
-        { nom: "Bacon grillé" },
-        { nom: "Cheddar" },
-        { nom: "Oignon croustillant" },
-        { nom: "Sauce barbecue" }
-    ],
+//     "Burger Bacon": [
+//         { nom: "Pain brioché" },
+//         { nom: "Steak de bœuf" },
+//         { nom: "Bacon grillé" },
+//         { nom: "Cheddar" },
+//         { nom: "Oignon croustillant" },
+//         { nom: "Sauce barbecue" }
+//     ],
 
-    "Burger Étage": [
-        { nom: "Pain brioché" },
-        { nom: "Double steak" },
-        { nom: "Double cheddar" },
-        { nom: "Salade" },
-        { nom: "Tomate" },
-        { nom: "Sauce spéciale" }
-    ],
+//     "Burger Étage": [
+//         { nom: "Pain brioché" },
+//         { nom: "Double steak" },
+//         { nom: "Double cheddar" },
+//         { nom: "Salade" },
+//         { nom: "Tomate" },
+//         { nom: "Sauce spéciale" }
+//     ],
 
-    "Burger Mini": [
-        { nom: "Petit pain" },
-        { nom: "Mini steak" },
-        { nom: "Cheddar" },
-        { nom: "Cornichons" },
-        { nom: "Ketchup" }
-    ],
+//     "Burger Mini": [
+//         { nom: "Petit pain" },
+//         { nom: "Mini steak" },
+//         { nom: "Cheddar" },
+//         { nom: "Cornichons" },
+//         { nom: "Ketchup" }
+//     ],
 
-    "Burger Valeria": [
-        { nom: "Pain brioché" },
-        { nom: "Poulet pané" },
-        { nom: "Salade" },
-        { nom: "Tomate" },
-        { nom: "Sauce blanche" },
-        { nom: "Mozzarella" }
-    ],
+//     "Burger Valeria": [
+//         { nom: "Pain brioché" },
+//         { nom: "Poulet pané" },
+//         { nom: "Salade" },
+//         { nom: "Tomate" },
+//         { nom: "Sauce blanche" },
+//         { nom: "Mozzarella" }
+//     ],
 
-    "Burger Cheese": [
-        { nom: "Pain brioché" },
-        { nom: "Steak de bœuf" },
-        { nom: "Double cheddar" },
-        { nom: "Oignon" },
-        { nom: "Sauce fromage" }
-    ],
+//     "Burger Cheese": [
+//         { nom: "Pain brioché" },
+//         { nom: "Steak de bœuf" },
+//         { nom: "Double cheddar" },
+//         { nom: "Oignon" },
+//         { nom: "Sauce fromage" }
+//     ],
 
-    "Burger Régime": [
-        { nom: "Pain complet" },
-        { nom: "Steak végétal" },
-        { nom: "Salade" },
-        { nom: "Tomate" },
-        { nom: "Concombre" },
-        { nom: "Sauce légère" }
-    ],
+//     "Burger Régime": [
+//         { nom: "Pain complet" },
+//         { nom: "Steak végétal" },
+//         { nom: "Salade" },
+//         { nom: "Tomate" },
+//         { nom: "Concombre" },
+//         { nom: "Sauce légère" }
+//     ],
 
-    "Hamburger Régime": [
-        { nom: "Pain complet" },
-        { nom: "Steak végétal" },
-        { nom: "Tomate" },
-        { nom: "Oignon" },
-        { nom: "Sauce vegan" }
-    ],
+//     "Hamburger Régime": [
+//         { nom: "Pain complet" },
+//         { nom: "Steak végétal" },
+//         { nom: "Tomate" },
+//         { nom: "Oignon" },
+//         { nom: "Sauce vegan" }
+//     ],
 
-    "Burger Épicé": [
-        { nom: "Pain brioché" },
-        { nom: "Steak de bœuf" },
-        { nom: "Jalapeños" },
-        { nom: "Sauce piquante" },
-        { nom: "Cheddar" },
-        { nom: "Oignon rouge" }
-    ]
-};
+//     "Burger Épicé": [
+//         { nom: "Pain brioché" },
+//         { nom: "Steak de bœuf" },
+//         { nom: "Jalapeños" },
+//         { nom: "Sauce piquante" },
+//         { nom: "Cheddar" },
+//         { nom: "Oignon rouge" }
+//     ]
+// };
 
-// On récupère la liste d’ingrédients du burger
-const liste = ingredientsData[burger];
+// On récupère la liste d’ingrédients du burger ( mtn inutile  on cree plus de liste d’ingrédients pour chaque burger, on a une seule liste globale)
+// const liste = ingredientsData[burger];
 
 
 
 // document.getElementById("titre").textContent = burger;
 
 // On affiche les ingrédients
-if (liste) {
-    liste.forEach(ing => {
-        document.getElementById("liste").innerHTML += `<li>${ing.nom}</li>`;
-    });
-} else {
-    document.getElementById("liste").innerHTML = `
-        <li style="color:red;">Aucun ingrédient trouvé pour ce burger</li>
-    `;
-}
+// if (liste) {
+//     liste.forEach(ing => {
+//         document.getElementById("liste").innerHTML += `<li>${ing.nom}</li>`;
+//     });
+// } else {
+//     document.getElementById("liste").innerHTML = `
+//         <li style="color:red;">Aucun ingrédient trouvé pour ce burger</li>
+//     `;
+// }
 console.log(burger);
 console.log("test");
  
@@ -115,21 +116,21 @@ const resultIng = document.getElementById("resultIng");
 inputIng.addEventListener("input", function () {
     const texte = inputIng.value.toLowerCase();
 
-    // On cherche un ingrédient qui correspond
-    const match = liste.find(ing => ing.nom.toLowerCase().includes(texte));
+    // On cherche un ingrédient qui correspond inutile  mtn 
+    // const match = liste.find(ing => ing.nom.toLowerCase().includes(texte));
 
-    if (match) {
-        ingredientTrouve = match;
-        resultIng.innerHTML = `
-             <p>Ingrédient trouvé : <strong>${match.nom}</strong></p>
-        `;
-    } else {
-        ingredientTrouve = null;
-        resultIng.innerHTML = `
-            <p style="color:red;">Aucun ingrédient trouvé</p>
-        `;
-        // console.log("Aucun ingrédient trouvé");
-    }
+    // if (match) {
+    //     ingredientTrouve = match;
+    //     resultIng.innerHTML = `
+    //          <p>Ingrédient trouvé : <strong>${match.nom}</strong></p>
+    //     `;
+    // } else {
+    //     ingredientTrouve = null;
+    //     resultIng.innerHTML = `
+    //         <p style="color:red;">Aucun ingrédient trouvé</p>
+    //     `;
+    //     // console.log("Aucun ingrédient trouvé");
+    // }
 });
 
 // comment stocker les ingrédients trouvés dans le localStorage solution en cours de recherche
@@ -142,12 +143,15 @@ function afficherIngredientsValides() {
         listeIngredientsValides.innerHTML += `<li>${ing.nom} (x${ing.quantite})</li>`;
     });
 }
+afficherIngredientsValides(); // affiche les ingrédients déjà enregistrés
 const btnIngredient = document.getElementById("btnIngredient");
 
 btnIngredient.addEventListener("click", function () {
 
-    if (!ingredientTrouve) {
-        resultIng.innerHTML = `<p style="color:red;">Aucun ingrédient sélectionné</p>`;
+    // Ingrédient libre saisi par l'utilisateur
+    const nom = inputIng.value.trim();
+    if (!nom) {
+        resultIng.innerHTML = `<p style="color:red;">Saisissez un ingrédient</p>`;
         return;
     }
 
@@ -159,14 +163,13 @@ btnIngredient.addEventListener("click", function () {
     }
 
     // Vérifier si déjà validé
-    if (ingredientsValides.includes(ingredientTrouve)) {
+    if (ingredientsValides.some(ing => ing.nom.toLowerCase() === nom.toLowerCase())) {
         resultIng.innerHTML = `<p style="color:red;">Cet ingrédient est déjà validé</p>`;
         return;
     }
 
     // Ajouter dans ingredientsValides avec la quantité choisie
-    ingredientTrouve.quantite = quantite;
-    ingredientsValides.push(ingredientTrouve);
+    ingredientsValides.push({ nom: nom, quantite: quantite });
 
     // Sauvegarder
     localStorage.setItem(
@@ -176,9 +179,10 @@ btnIngredient.addEventListener("click", function () {
 
     // Réafficher les ingrédients validés
     afficherIngredientsValides();
+    inputIng.value = "";
 
     // Message de confirmation
-    resultIng.innerHTML = `<p style="color:green;">Ingrédient ajouté : <strong>${ingredientTrouve.nom}</strong></p>`;
+    resultIng.innerHTML = `<p style="color:green;">Ingrédient ajouté : <strong>${nom}</strong></p>`;
 });
 
 
